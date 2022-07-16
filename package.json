@@ -1,0 +1,24 @@
+{
+  "name": "managerofsorts",
+  "version": "1.0.0",
+  "description": "Employee Tracker  AS A business owner I WANT to be able to view and manage the departments, roles, and employees in my company SO THAT I can organize and plan my business",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mattchublue/managerofsorts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mattchublue/managerofsorts/issues"
+  },
+  "homepage": "https://github.com/Mattchublue/managerofsorts#readme",
+  "dependencies": {
+    "inquirer": "^9.0.1",
+    "mysql2": "^2.3.3"
+  }
+}
