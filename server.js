@@ -126,3 +126,58 @@ function addEmployee() {
         )
     })
 }
+ function addDepartment() {
+    inquirer.prompt([
+        {
+            type:"input", 
+            name:"addDepartment",
+            message:"What is the Department you would like to add?"
+        }
+    ])
+    .then (data => {
+        let dbquery = "INSERT INTO department SET ?"
+        db.query (dbquery, {
+            name: data.addDepartment
+        })
+        firstQuestion();
+    })
+ } 
+
+
+ function addRole() {
+    let dbquery="SELECT * FROM department"
+    db.query(dbquery, function(err, res) {
+        if (err) throw err;
+        inquirer.prompt([
+            {
+                type:"input", 
+                name:"title",
+                message:"What is the title of the new role?"
+            },
+            {
+                type:"input", 
+                name:"salary",
+                message:"What is the new Employee's salary?"
+            },
+            {
+                type:"list", 
+                name:"department",
+                message:"What department handles this role?",
+                choices: res.map(department => department.name)
+            },
+
+        ]).then(
+            data => {
+                let departmentName = res.find(department => department.name===data.department)
+                let dbquery = "INSERT INTO role SET ?"
+                db.query (dbquery, {
+                    title: data.title,
+                    salary: data.salary,
+                    department_id: departmentName.id
+                })
+                firstQuestion();
+            }
+        )
+    })
+}
+
