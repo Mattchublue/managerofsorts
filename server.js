@@ -1,14 +1,7 @@
-const mysql = require("mysql2");
-const inquirer = require("inquirer");
 
-const db =mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
+import inquirer from "inquirer";
+import db from "./connection.js";
 
-    password: "",
-    database: "employeesDB"
-});
 
 
 db.connect(function (err){
@@ -40,7 +33,7 @@ function firstQuestion() {
             break;
   
           case "View Departments":
-            viewByDepartment();
+            viewbyDepartment();
             break;
         
           case "View Roles":
@@ -68,4 +61,14 @@ function firstQuestion() {
             break;
         }
 });
+}
+
+
+function viewbyDepartment() {
+    let dbquery="SELECT * FROM department"
+    db.query(dbquery, function(err, res) {
+        if (err) throw err;
+console.table(res);
+        firstQuestion();
+    })
 }
