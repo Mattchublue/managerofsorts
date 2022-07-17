@@ -8,6 +8,6 @@ VALUES ("Lead Engineer", 150000, 2),("Software Engineer", 120000, 2), ("Accounta
 ("Legal Team Lead", 250000, 4);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Jane", "Doe", 1, 3), ("Norah", "Rios", 2, 1), ("Kate", "Mellor", 3, null),
-("Shiv", "Betts", 4, 3), ("Leen", "Hurst", 5, null),("Gary", "Leer", 2, null),
-("Tom", "Cruise", 4, 7),("Daisy", "Hooper", 1, 2);
+VALUES ("David", "Bowie", 1, 3), ("Monica", "Lewinsky", 2, 1), ("Goldie", "Hawn", 3, null),
+("Stevie", "Nicks", 4, 3), ("Marilyn", "Manson", 5, null),("Tom", "Petty", 2, null),
+("DK", "Metcalf", 4, 7),("Tyler", "Lockett", 1, 2);
